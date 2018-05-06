@@ -7,4 +7,4 @@
 
 ## 基本UI
 
-[img](https://github.com/LastNight1997/FoodTracker/tree/master/img/img1.jpg)
+![img](https://github.com/LastNight1997/FoodTracker/raw/master/img/img1.jpg)
