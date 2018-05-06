@@ -13,6 +13,9 @@ class MealTableViewController: UITableViewController {
     //MARK: Properties
     
     var meals = [Meal]()
+    var boolrating = false
+    var boolprice = false
+    var booltime = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +89,45 @@ class MealTableViewController: UITableViewController {
             }
             saveMeals()
         }
+    }
+    
+    @IBAction func reorderByRating(_ sender: UIButton) {
+        if !boolrating{
+            meals.sort{$0.rating>$1.rating}
+            tableView.reloadData()
+            boolrating = true
+        } else {
+            meals.sort{$0.rating<$1.rating}
+            tableView.reloadData()
+            boolrating = false
+        }
+        saveMeals()
+    }
+    
+    @IBAction func reorderByPrice(_ sender: UIButton) {
+        if !boolprice{
+            meals.sort{$0.price>$1.price}
+            tableView.reloadData()
+            boolprice = true
+        } else {
+            meals.sort{$0.price<$1.price}
+            tableView.reloadData()
+            boolprice = false
+        }
+        saveMeals()
+    }
+    
+    @IBAction func reorderByTime(_ sender: UIButton) {
+        if !booltime{
+            meals.sort{$0.time>$1.time}
+            tableView.reloadData()
+            booltime = true
+        } else {
+            meals.sort{$0.time<$1.time}
+            tableView.reloadData()
+            booltime = false
+        }
+        saveMeals()
     }
     
     // Override to support conditional editing of the table view.
