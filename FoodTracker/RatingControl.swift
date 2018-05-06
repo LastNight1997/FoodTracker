@@ -16,7 +16,7 @@ import UIKit
             updateButtonSelectionStates()
         }
     }
-    @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0) {
+    @IBInspectable var starSize: CGSize = CGSize(width: 35.0, height: 35.0) {
         didSet {
             setupButtons()
         }

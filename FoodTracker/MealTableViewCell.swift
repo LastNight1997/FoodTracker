@@ -13,6 +13,8 @@ class MealTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var ratingControl: RatingControl!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
 
     override func awakeFromNib() {

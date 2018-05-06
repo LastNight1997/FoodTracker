@@ -60,6 +60,8 @@ class MealTableViewController: UITableViewController {
         cell.nameLabel.text = meal.name
         cell.photoImageView.image = meal.photo
         cell.ratingControl.rating = meal.rating
+        cell.priceLabel.text = String(meal.price) + "￥"
+        cell.timeLabel.text = String(meal.time) + " min"
         
         return cell
     }
@@ -106,20 +108,23 @@ class MealTableViewController: UITableViewController {
     }
     
 
-    /*
+    
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+        let movedObject = self.meals[fromIndexPath.row]
+        meals.remove(at: fromIndexPath.row)
+        meals.insert(movedObject, at: to.row)
+        saveMeals()
     }
-    */
+    
 
-    /*
+    
     // Override to support conditional rearranging of the table view.
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
     }
-    */
+    
 
     
     // MARK: - Navigation
@@ -170,15 +175,15 @@ class MealTableViewController: UITableViewController {
         let photo2 = UIImage(named: "meal2")
         let photo3 = UIImage(named: "meal3")
         
-        guard let meal1 = Meal(name: "Caprese Salad", photo: photo1, rating: 4) else {
+        guard let meal1 = Meal(name: "Caprese Salad", photo: photo1, rating: 4, price: 10, time: 10) else {
             fatalError("Unable to instantiate meal1")
         }
         
-        guard let meal2 = Meal(name: "Chicken and Potatoes", photo: photo2, rating: 5) else {
+        guard let meal2 = Meal(name: "Chicken and Potatoes", photo: photo2, rating: 5, price: 20, time: 26) else {
             fatalError("Unable to instantiate meal2")
         }
         
-        guard let meal3 = Meal(name: "Pasta with Meatballs", photo: photo3, rating: 3) else {
+        guard let meal3 = Meal(name: "Pasta with Meatballs", photo: photo3, rating: 3, price: 22, time: 25) else {
             fatalError("Unable to instantiate meal2")
         }
         
